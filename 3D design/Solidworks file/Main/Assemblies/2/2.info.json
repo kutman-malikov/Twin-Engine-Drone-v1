@@ -1,0 +1,78 @@
+{
+    "version": 0,
+    "model_name": "Main assemnly.SLDASM",
+    "project_name": "Project(2)",
+    "config_name": "Default(2)",
+    "project_path": "C:\\Users\\mktoo\\Documents\\Programming\\Projects\\Twin Engine Drone\\Twin Engine Drone\\3D design\\Solidworks file\\Main\\Assemblies\\2\\2.xmlconfig",
+    "finished": true,
+    "mesh": {
+        "cells_total": 91523,
+        "cells_fluid": 91523,
+        "cells_solid": 4763,
+        "cells_fluid_containing_solid": 7014
+    },
+    "telemetry": {
+        "prepare_geometry_finished": "16:32:13+0600",
+        "prepare_geometry_total_time": 2,
+        "cpu_time_solver_total": 64,
+        "iteration": 119,
+        "travel": 1.3203028222645805,
+        "phys_time": 0.0,
+        "time_step": 0.0,
+        "last_iteration_finished": "16:33:13+0600",
+        "cpu_time_per_last_iter": 0,
+        "cpu_time_left": 0,
+        "iterations_per_travel": 91
+    },
+    "goals": [
+        {
+            "goal": {
+                "name": "GG Force (X) 1",
+                "unit": "force",
+                "value": 2.1561197766232616,
+                "progress": 100.0,
+                "criteria": 0.25278761301875713,
+                "delta": 0.01900360754100161,
+                "use_in_convergence": true
+            }
+        },
+        {
+            "goal": {
+                "name": "GG Force (Y) 2",
+                "unit": "force",
+                "value": 4.154443215745724,
+                "progress": 100.0,
+                "criteria": 0.1620570152300622,
+                "delta": 0.15590214662772883,
+                "use_in_convergence": true
+            }
+        }
+    ],
+    "settings": {
+        "default_fluids": [
+            "Air"
+        ],
+        "analysis_type": "external",
+        "heat_conduction_in_solids": false,
+        "radiation": false,
+        "time_dependent": false,
+        "gravity": true,
+        "flow_type": "laminar and turbulent",
+        "cavitation": false,
+        "high_mach_number": true,
+        "free_surface": false,
+        "structural": false,
+        "electromagnetism": false
+    },
+    "system_info": {
+        "product_name": "Flow Simulation 2024  x64 / 6320 / SOLVER ver. efd_dev.5608_04.02.2022+HMN_Inlet_Rework_V1+HMN_Inlet_Rework_V2",
+        "cad_version": "SOLIDWORKS 2024 SP2.0",
+        "computer_name": "DESKTOP-SFSD8ON",
+        "user_name": "mktoo",
+        "os": "Windows 11 (or higher) (Version 10.0.26200)",
+        "cpu": "11th Gen Intel(R) Core(TM) i7-11800H @ 2.30GHz",
+        "number_of_cores": 16,
+        "memory_avail": 9843,
+        "memory_total": 16163
+    }
+}

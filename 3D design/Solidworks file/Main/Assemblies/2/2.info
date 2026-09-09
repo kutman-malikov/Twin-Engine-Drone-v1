@@ -1,0 +1,54 @@
+Model: Main assemnly.SLDASM
+Project name: Project(2)
+Config name: Default(2)
+Project path: C:\Users\mktoo\Documents\Programming\Projects\Twin Engine Drone\Twin Engine Drone\3D design\Solidworks file\Main\Assemblies\2\2.xmlconfig
+Status: Finished
+
+Number of cells:
+    Total cells: 91523
+    Fluid cells: 91523
+    Solid cells: 4763
+    Fluid cells containing solids: 7014
+
+
+Geometry preparation finished: 16:32:13
+Geometry preparation time: 00:00:02
+Solver CPU time: 00:01:04
+Iterations: 119
+Travels: 1.32030
+Physical time: 0.000000e+00 s
+Current time step: 0.000000e+00 s
+Last iteration finished: 16:33:13
+CPU time per last iteration: 00:00:00
+CPU time left: 00:00:00
+Iterations per 1 travel: 91
+
+Goals
+    Name           | Unit (SI) | Value           | Progress  | Critetia        | Delta           | Use in convergence
+    GG Force (X) 1 | force    |            2.16 |     100.0 |            0.25 |            0.02 | On
+    GG Force (Y) 2 | force    |            4.15 |     100.0 |            0.16 |            0.16 | On
+
+Project details
+    Default fluids: Air
+    Analysis type: External
+    Heat conduction in solids: Off
+    Radiation: Off
+    Time dependent: Off
+    Gravitational effects: On
+    Flow type: Laminar and turbulent
+    Cavitation: Off
+    Hign Mach number flow: On
+    Free surface: Off
+    Structural: Off
+    Electromagnetism: Off
+
+System info
+    Product: Flow Simulation 2024  x64 / 6320 / SOLVER ver. efd_dev.5608_04.02.2022+HMN_Inlet_Rework_V1+HMN_Inlet_Rework_V2
+    CAD version: SOLIDWORKS 2024 SP2.0
+    Computer name: DESKTOP-SFSD8ON
+    User name: mktoo
+    Operating system: Windows 11 (or higher) (Version 10.0.26200)
+    Processors: 11th Gen Intel(R) Core(TM) i7-11800H @ 2.30GHz
+    Number of cores: 16
+    Memory: 9843 MB / 16163 MB
+
