@@ -2,7 +2,9 @@
 
 SolidWorks CAD for a **twin-motor, high-wing, FDM-printed fixed-wing UAV** designed from scratch as a flying test platform for avionics. The airframe was designed, printed and assembled at the Rapid Additive Laboratory of the Institute of Mechanical Engineering and Automation, National Academy of Sciences of the Kyrgyz Republic (NAS KR), during a summer 2026 internship.
 
-![Assembled airframe](docs/images/assembled-airframe.jpg)
+![Assembled airframe](Docs/images/assembled-airframe.jpg)
+
+🎬 **Assembly animation:** [Videos/Main assemnly.mp4](Videos/Main%20assemnly.mp4)
 
 ## Overview
 
@@ -34,9 +36,11 @@ The main wing uses the **P-IIIA** airfoil for its good lift-to-drag ratio and pr
 A SolidWorks Flow Simulation at 16.67 m/s (60 km/h) and 16° angle of attack gave **17.4 N lift and 0.373 N drag** for a 1.6 kg design mass; the calculated cruise speed at 8° angle of attack is about **52 km/h**.
 
 <p>
-  <img src="docs/images/wing-airfoil-sketch.jpg" width="48%" alt="P-IIIA wing airfoil sketch">
-  <img src="docs/images/wing-flow-simulation.jpg" width="48%" alt="Flow simulation of the main wing">
+  <img src="Docs/images/wing-airfoil-sketch.jpg" width="48%" alt="P-IIIA wing airfoil sketch">
+  <img src="Docs/images/wing-flow-simulation.jpg" width="48%" alt="Flow simulation of the main wing">
 </p>
+
+![Flow simulation of the whole UAV](Docs/images/uav-flow-simulation.jpg)
 
 ### Fuselage
 The fuselage is built section by section:
@@ -48,8 +52,8 @@ The fuselage is built section by section:
 - **Electronics cartridge** holding the flight controller, GPS, receiver and video transmitter, sliding on four rails for quick access.
 
 <p>
-  <img src="docs/images/fuselage-cad.jpg" width="48%" alt="Fuselage CAD assembly">
-  <img src="docs/images/fuselage-bulkhead.jpg" width="48%" alt="Internal fuselage bulkhead">
+  <img src="Docs/images/fuselage-cad.jpg" width="48%" alt="Fuselage CAD assembly">
+  <img src="Docs/images/fuselage-bulkhead.jpg" width="48%" alt="Internal fuselage bulkhead">
 </p>
 
 ### Wing attachment
@@ -59,13 +63,13 @@ The wing mounts to the fuselage with **no external screws**: a cantilever bracke
 Nacelles are B-29-style mounts that install from below, so a motor or ESC can be swapped easily. They have 10 mm clearance between propeller and fuselage and 1 mm walls. The motor-to-fairing gap was increased from 0.5 mm to 1.5 mm after the first version caused vibration, and one motor mount was enlarged after failing a strength test.
 
 <p>
-  <img src="docs/images/motor-nacelle.jpg" width="48%" alt="Motor nacelle CAD">
-  <img src="docs/images/electronics-cartridge.jpg" width="48%" alt="Electronics cartridge CAD">
+  <img src="Docs/images/motor-nacelle.jpg" width="48%" alt="Motor nacelle CAD">
+  <img src="Docs/images/electronics-cartridge.jpg" width="48%" alt="Electronics cartridge CAD">
 </p>
 
 ## Manufacturing notes
 
-All structural parts are FDM-printed (FLSUN V400, up to three printers in parallel). The wing is split into **14 sections of 100 mm with 32 alignment pins** to stop tall parts from warping. Sections are joined with two-part epoxy and superglue, then sanded for fit and reduced drag.
+All structural parts are FDM-printed (FLSUN V400, up to three printers in parallel). The wing is split into **13 sections of 100 mm with 32 alignment pins** to stop tall parts from warping. Sections are joined with two-part epoxy and superglue, then sanded for fit and reduced drag.
 
 Lessons learned during printing, now reflected in the models:
 
@@ -77,7 +81,7 @@ Lessons learned during printing, now reflected in the models:
 | Rough surface on near-horizontal prints | Reoriented parts |
 | Weak layer direction at wing mounts | Vertical bracket + horizontal spar pin |
 
-![Printed parts](docs/images/printed-parts.jpg)
+<img src="Docs/images/printed-parts.jpg" width="60%" alt="FDM-printed wing sections, fuselage frame and mounting parts">
 
 ## Bill of materials (electronics)
 
@@ -97,6 +101,10 @@ Each component was modeled in CAD from caliper measurements to check fit before 
 | **Total** | | | **679.6 g** | **$155.60** |
 
 Transmitter: FlySky FS-i6, reflashed from 6 to 10 channels.
+
+<img src="Docs/images/battery-pack.jpg" width="48%" alt="Assembled 4S2P US18650VTC5 battery pack">
+
+> **Note:** the receiver fit-check model in `Dimensions of parts` is the FS-iA6A. It was modeled before the switch to the FS-iA10B, and no separate FS-iA10B model was made.
 
 ## Airfoil data
 
@@ -154,21 +162,38 @@ Transmitter: FlySky FS-i6, reflashed from 6 to 10 channels.
 
 ## Repository structure
 
-<!-- Adjust to match the actual repo layout. -->
 ```
 .
-├── cad/            # SolidWorks parts and assemblies (.SLDPRT / .SLDASM)
-├── stl/            # Print-ready meshes
-├── docs/           # Report, images, drawings
+├── 3D design/
+│   └── Solidworks file/
+│       ├── Main/
+│       │   ├── Assemblies/          # Top-level assemblies (Main assemnly.SLDASM, wing, battery pack, servo)
+│       │   ├── Battery holders/     # 18650 4S2P holder parts + STL
+│       │   ├── Engine Nacelle/      # Motor nacelles, ESC holder + STL
+│       │   ├── Fuselage/            # Fuselage sections, frame, cartridge + STL
+│       │   ├── Wings/               # Wing sections, spar, tail + STL
+│       │   └── Printing.3mf         # Orca Slicer print project
+│       ├── Dimensions of parts/     # Caliper-measured models of electronics (motors, ESC, GPS, servo, props…)
+│       └── gcode/                   # Sliced G-code (ABS) for FLSUN V400
+├── Docs/
+│   ├── Datasheets/                  # 18650 cell, ST L78 voltage regulator
+│   ├── images/                      # Pictures used in this README
+│   ├── BOM NASKR drone.xlsx         # Bill of materials
+│   ├── Профиль P-iii.xlsx           # P-IIIA airfoil ordinates
+│   ├── Spravochnic_avia_profiley.pdf# Airfoil reference handbook
+│   └── SPRacingF3-Manual-latest.pdf
+├── Videos/
+│   └── Main assemnly.mp4            # Assembly animation
+├── LICENSE
 └── README.md
 ```
 
 ## Getting started
 
-1. Open the top-level assembly in **SolidWorks** (the project was developed in SolidWorks; version to be specified).
-2. Slice the STL files with **Orca Slicer** (or similar). The original build used an FLSUN V400.
-3. Observe the print-orientation notes above, especially for wing mounts, nacelles and the wing sections.
-4. Check the center of mass after installing the electronics, and use the battery tray rails to tune it.
+1. Open [`3D design/Solidworks file/Main/Assemblies/Main assemnly.SLDASM`](3D%20design/Solidworks%20file/Main/Assemblies) in **SolidWorks 2024** (older versions cannot open these files). Keep the folder structure intact so the assembly finds its parts.
+2. Ready-to-print meshes are in the `STL/` subfolders of each section; ready G-code for the FLSUN V400 (ABS) is in [`gcode/`](3D%20design/Solidworks%20file/gcode). The full print project is `Main/Printing.3mf` (Orca Slicer).
+3. Follow the print-orientation notes above, especially for wing mounts, nacelles and the wing sections.
+4. After installing the electronics, check the center of mass and use the battery tray rails to tune it.
 
 ## Status
 
@@ -184,5 +209,4 @@ Based on the EEE 4995 summer training report, *Design and Development of a Twin-
 
 ## License
 
-<!-- Choose a license, e.g. MIT for code or CC BY 4.0 / CERN-OHL for hardware designs. -->
-TBD
+Released under the [Apache License 2.0](LICENSE).
